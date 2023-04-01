@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../logo.svg'
+import logo from '../assets/logo.svg'
 import {ImStatsDots} from 'react-icons/im'
 import {MdMessage} from 'react-icons/md'
 import {HiClipboardList} from 'react-icons/hi'
@@ -9,7 +9,7 @@ import {IoMdSettings} from 'react-icons/io'
 import {FaUserCircle} from 'react-icons/fa'
 import Stat from './absence'
 
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 export default function navbar() {

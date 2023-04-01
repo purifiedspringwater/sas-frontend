@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './styles/SignIn.css';
+import logo from '../assets/logo.svg';
+import '../styles/SignIn.css';
 import { useNavigate, Routes, Route } from 'react-router-dom';
 import Main from './Main'
 

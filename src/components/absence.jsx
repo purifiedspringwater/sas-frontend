@@ -38,7 +38,7 @@ export default function main() {
             <td><a href="">Not Active</a></td>
           </tr>
           <tr className='notActive'>
-            <td>RedHat - System Administration(OpenCode) </td>
+            <td>RedHat - System Administration (OpenCode) </td>
             <td>13%</td>
             <td>05-N</td>
             <td>312F</td>

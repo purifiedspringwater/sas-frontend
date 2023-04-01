@@ -1,6 +1,7 @@
 import React from 'react'
 import { BsFillXCircleFill, BsCheckCircleFill } from 'react-icons/bs'
 import Absence from './absence'
+import SubjectStat from './subjectStatistics'
 
 
 export default function () {
@@ -60,7 +61,7 @@ export default function () {
                 </tr>
             </table>
             <button className='showStatBtn'>Show Statistics</button>
-            <Absence/>
+            <SubjectStat/>
 
         </div>
     )

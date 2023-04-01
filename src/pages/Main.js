@@ -1,11 +1,11 @@
 import React from "react";
 import { useState } from 'react';
-import {NavLine, Outlet} from 'react-router-dom'
-import Navbar from "./components/navbar";
-import Absence from './components/absence'
-import OnlineTime from './components/OnlineTime'
-import Statistics from './components/statistics';
-import './styles/Main.css'
+import {NavLink, Outlet} from 'react-router-dom'
+import Navbar from "../components/navbar";
+import Absence from '../components/absence'
+import OnlineTime from '../components/OnlineTime'
+import Statistics from '../components/statistics';
+import '../styles/Main.css'
 
 function Main() {
 
