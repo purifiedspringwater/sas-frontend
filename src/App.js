@@ -1,20 +1,19 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from "./Main";
 import SignIn from "./SignIn";
+import Absence from './components/absence'
+import Statistics from './components/statistics'
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route path="/main">
-          <Main />
-        </Route>
-        <Route path="/">
-          <SignIn />
-        </Route>
-      </Switch>
-    </Router>
+    <Routes>
+      <Route path="/login"element = {<SignIn/>}/>
+      <Route path="/" element = {<Main/>}>
+        <Route index  element = {<Absence/>}/>
+        <Route path="statistics"  element = {<Statistics/>}/>
+      </Route>
+    </Routes>
   );
 }
 

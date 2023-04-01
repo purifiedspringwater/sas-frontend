@@ -24,7 +24,7 @@ function OnlineTime() {
     }, []);
 
     return (
-        <div>
+        <div className='onlineTime'>
             {onlineTime}
             <br />
             {dayOfWeek}

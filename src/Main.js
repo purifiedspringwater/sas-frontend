@@ -1,18 +1,25 @@
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import {NavLine, Outlet} from 'react-router-dom'
 import Navbar from "./components/navbar";
 import Absence from './components/absence'
-import OnlineTime from "./components/OnlineTime";
+import OnlineTime from './components/OnlineTime'
+import Statistics from './components/statistics';
 import './styles/Main.css'
 
 function Main() {
+
+    const [activeLink, setActiveLink] = useState('SignIn');
+
+    const handleLinkClick = (name) => {
+        setActiveLink(name);
+    };
+
     return (
         <div className="Main">
             <Navbar />
-            <Absence />
-            <div>
-                <OnlineTime/>
-            </div>
+            <Outlet/>
+            <OnlineTime />
         </div>
     );
 }
