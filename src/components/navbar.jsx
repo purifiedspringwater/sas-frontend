@@ -28,7 +28,7 @@ export default function navbar() {
           <NavLink to={'/'}><AiFillHome/>    MainPage</NavLink>
           <NavLink to={'/statistics'}><ImStatsDots/>    Statistics</NavLink>
           <NavLink to={'/messages'}><MdMessage/>    Messages</NavLink>
-          <NavLink to={'/absence'}><HiClipboardList/>    Absence Reason</NavLink>
+          <NavLink to={'/reason'}><HiClipboardList/>    Absence Reason</NavLink>
           <NavLink to={'/settings'}><IoMdSettings/>    Settings</NavLink>
           <NavLink to={'/logout'} style={{color : '#ff0000'}}><BiLogOut/>    Log out</NavLink>
         </div>

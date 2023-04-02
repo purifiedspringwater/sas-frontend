@@ -4,6 +4,8 @@ import Main from "./pages/Main";
 import SignIn from "./pages/SignIn";
 import Absence from './components/absence'
 import Statistics from './components/statistics'
+import {useState} from 'react';
+import Specialreason from "./components/specialreason";
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Route path="/" element = {<Main/>}>
         <Route index  element = {<Absence/>}/>
         <Route path="statistics"  element = {<Statistics/>}/>
+        <Route path="reason"  element = {<Specialreason/>}/>
       </Route>
     </Routes>
   );

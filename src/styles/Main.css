@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+*,
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
   font-family: "Poppins", sans-serif;
 }
 
@@ -19,6 +19,21 @@ table {
   border-collapse: collapse;
 }
 
+button {
+  margin: 20px;
+  background: #6dcf4b;
+  border: 0;
+  border-radius: 35px;
+  color: white;
+  padding: 10px 25px;
+  width: min-content;
+  align-self: flex-end;
+}
+
+button:disabled {
+  background: #878787;
+}
+
 #root {
   display: flex;
   flex-direction: row;
@@ -32,6 +47,7 @@ table {
 }
 
 .Main > div:nth-child(2) {
+  margin-top: 100px;
   width: 100%;
 }
 
@@ -247,10 +263,6 @@ table {
 
 /* Subject Statistics */
 
-.statistics .subjectStat > div {
-
-}
-
 .statistics .subjectStat table col {
   border-right: 2px solid #d9d9d9;
 }
@@ -271,4 +283,80 @@ table {
 
 .statistics .subjectStat .pieChart > div {
   width: 100%;
+}
+
+/* Special Reason */
+
+.special_reason {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.special_reason h2 {
+  color: #50abff;
+}
+
+
+.special_reason .date_chooser {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.special_reason .date_chooser label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.special_reason .date_chooser label > * {
+  width: fit-content;
+}
+
+.special_reason label input,
+select,
+option {
+  background: #a1a4a0;
+  border-radius: 35px;
+  border: 0px;
+  padding: 10px 20px;
+  text-align: center;
+  color: white;
+  width: min-content;
+}
+
+.file-upload {
+  margin-top: 30px;
+  text-align: center;
+  border: 3px dashed rgb(210, 227, 244);
+  padding: 1.5rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.file-upload p {
+  font-size: 0.87rem;
+  margin-top: 10px;
+  color: #bbcada;
+}
+
+.file-upload input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.special_reason form button {
+  float: right;
 }
