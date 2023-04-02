@@ -31,7 +31,7 @@ table {
   width: 100%;
 }
 
-.Main div:nth-child(2) {
+.Main > div:nth-child(2) {
   width: 100%;
 }
 
@@ -247,6 +247,28 @@ table {
 
 /* Subject Statistics */
 
+.statistics .subjectStat > div {
+
+}
+
 .statistics .subjectStat table col {
   border-right: 2px solid #d9d9d9;
+}
+
+.statistics .subjectStat > div {
+  display: grid;
+  margin: 60px auto;
+}
+
+.statistics .subjectStat h4 {
+  grid-area: 1/1/2/3;
+}
+
+.statistics .subjectStat .pieChart {
+  display: flex;
+  align-items: center;
+}
+
+.statistics .subjectStat .pieChart > div {
+  width: 100%;
 }

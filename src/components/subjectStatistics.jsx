@@ -1,8 +1,11 @@
 import React from 'react'
 import { BsFillXCircleFill, BsCheckCircleFill } from 'react-icons/bs'
-
+import PieChart from './pieChart'
 
 export default function subjectStatistics() {
+
+    const attendanceData = [25, 10, 5];
+
     return (
         <div className='subjectStat'>
             <h2>Design Pattern</h2>
@@ -43,9 +46,12 @@ export default function subjectStatistics() {
                         </tr>
                     </tbody>
                 </table>
+                <div className="pieChart">
+                    <PieChart data={[25, 50, 25]} />
+                </div>
 
             </div>
-            <div className="practice"></div>
+            <div className="practice">
                 <h4>03P - Lyazzat Atymtayeva, Doctor of Science</h4>
                 <table>
                     <col span={-1}></col>
@@ -82,6 +88,11 @@ export default function subjectStatistics() {
                         </tr>
                     </tbody>
                 </table>
+                <div className="pieChart">
+                    <PieChart data={[20, 50, 25]} />
+                </div>
+            </div>
+
         </div>
     )
 }
