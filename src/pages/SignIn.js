@@ -22,10 +22,10 @@ function SignIn() {
           <button type="submit" >LOG IN</button>
         </form>
       </div>
-      <Routes>
+      {/* <Routes>
         <Route path='/' element={<Main/>}/>
         <Route path='/login' element={<SignIn/>}/>
-      </Routes>
+      </Routes> */}
     </div>
     
   );
