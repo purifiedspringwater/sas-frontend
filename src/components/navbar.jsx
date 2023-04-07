@@ -30,7 +30,7 @@ export default function navbar() {
           <NavLink to={'/messages'}><MdMessage/>    Messages</NavLink>
           <NavLink to={'/reason'}><HiClipboardList/>    Absence Reason</NavLink>
           <NavLink to={'/settings'}><IoMdSettings/>    Settings</NavLink>
-          <NavLink to={'/logout'} style={{color : '#ff0000'}}><BiLogOut/>    Log out</NavLink>
+          <NavLink to={'/login'} style={{color : '#ff0000'}}><BiLogOut/>    Log out</NavLink>
         </div>
     </div>
   )

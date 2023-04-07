@@ -30,21 +30,21 @@ img {
   max-width: fit-content;
 }
 
-.SignIn form {
+.signIn form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 70%;
 }
 
-.SignIn form input {
+.signIn form input {
   border: 0;
   min-height: 30px;
   background: #ffffff;
   border-radius: 20px;
 }
 
-.SignIn form button {
+.signIn form button {
   padding: 10px;
   width: fit-content;
   background: #50abff;
