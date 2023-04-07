@@ -1,10 +1,9 @@
 import React from 'react'
 import { BsFillXCircleFill, BsCheckCircleFill } from 'react-icons/bs'
-import Absence from './absence'
 import SubjectStat from './subjectStatistics'
 
 
-export default function () {
+export default function Statistics () {
     return (
         <div className="statistics">
             <h2>Statistics</h2>

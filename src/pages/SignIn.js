@@ -1,15 +1,14 @@
 import React from 'react';
 import logo from '../assets/logo.svg';
 import '../styles/SignIn.css';
-import { useNavigate, Routes, Route } from 'react-router-dom';
-import Main from './Main'
+import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    navigate('/');
+    navigate('/main');
   };
 
   return (
@@ -22,12 +21,8 @@ function SignIn() {
           <button type="submit" >LOG IN</button>
         </form>
       </div>
-      {/* <Routes>
-        <Route path='/' element={<Main/>}/>
-        <Route path='/login' element={<SignIn/>}/>
-      </Routes> */}
     </div>
-    
+
   );
 }
 

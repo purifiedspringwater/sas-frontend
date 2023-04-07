@@ -1,8 +1,7 @@
 import React from 'react'
-
 import { useState, useEffect } from 'react';
 
-function OnlineTime() {
+export default function OnlineTime() {
     const [onlineTime, setOnlineTime] = useState('');
     const [dayOfWeek, setDayOfWeek] = useState('');
     const [currentTime, setCurrentTime] = useState('');
@@ -31,8 +30,5 @@ function OnlineTime() {
             <br />
             {currentTime}
         </div>
-    );
+    )
 }
-
-export default OnlineTime;
-

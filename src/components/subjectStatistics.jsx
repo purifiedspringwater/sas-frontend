@@ -47,7 +47,7 @@ export default function subjectStatistics() {
                     </tbody>
                 </table>
                 <div className="pieChart">
-                    <PieChart data={[25, 50, 25]} />
+                    <PieChart data={attendanceData} />
                 </div>
 
             </div>
@@ -89,7 +89,7 @@ export default function subjectStatistics() {
                     </tbody>
                 </table>
                 <div className="pieChart">
-                    <PieChart data={[20, 50, 25]} />
+                    <PieChart data={attendanceData} />
                 </div>
             </div>
 
