@@ -10,7 +10,7 @@ import { FaUserCircle } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 
 
-export default function navbar() {
+export default function Navbar() {
   return (
     <div className="navbar">
       <img src={logo} alt="logo" style={{ width: 300 + 'px' }} />

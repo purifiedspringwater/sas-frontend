@@ -53,17 +53,18 @@ button:disabled {
 .onlineTime {
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 20px;
+  line-height: 25px;
   text-align: center;
 
   color: #50abff;
-  position: fixed;
-  top: 60px;
-  right: 80px;
+  position: absolute;
+  top: 40px;
+  right: 60px;
 }
 
-/* NavBar */
+/* <-----------******----------> */
+/*             Navbar            */
 
 .navbar {
   background: #e7e8f0;
@@ -161,7 +162,8 @@ button:disabled {
   margin: auto 0;
 }
 
-/* Main Page*/
+/* <-----------******----------> */
+/*              Main             */
 
 .main {
   display: flex;
@@ -224,7 +226,8 @@ button:disabled {
   background: #ffb13c;
 }
 
-/* Statistics */
+/* <-----------******----------> */
+/*           Statistics          */
 
 .statistics {
   display: flex;
@@ -259,7 +262,8 @@ button:disabled {
   padding: 10px 20px;
 }
 
-/* Subject Statistics */
+/* <-----------******----------> */
+/*        Subject Statistics     */
 
 .statistics .subjectStat table col {
   border-right: 2px solid #d9d9d9;
@@ -283,7 +287,8 @@ button:disabled {
   width: 100%;
 }
 
-/* Special Reason */
+/* <-----------******----------> */
+/*         Special Reason        */
 
 .special_reason {
   display: flex;
@@ -294,7 +299,6 @@ button:disabled {
 .special_reason h2 {
   color: #50abff;
 }
-
 
 .special_reason .date_chooser {
   display: flex;
@@ -357,4 +361,107 @@ option {
 
 .special_reason form button {
   float: right;
+}
+
+/* <-----------******----------> */
+/*            Message            */
+
+.messages_container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.messages_container h2 {
+  color: #50abff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.messages_container .returnBtn {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 1.5em;
+  order: -1;
+  color: #50abff;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.messages div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid #50abff;
+  align-items: center;
+}
+
+.messages div .dot {
+  display: flex;
+  align-items: center;
+  width: 10px;
+  height: 55px;
+  color: #50abff;
+  font-size: 2em;
+}
+
+.messages div .content {
+  flex-grow: 1;
+}
+
+.messages .sender {
+  flex-grow: 1;
+  color: #50abff;
+  text-decoration: underline;
+}
+
+.message .message_header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #50abff;
+  padding: 15px;
+}
+
+.message .sender {
+  color: #50abff;
+  text-decoration: underline;
+}
+
+.message_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.message_content .request {
+  padding: 30px;
+  margin-top: 20px;
+  background: #e7e8f0;
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 35px;
+}
+
+.message_content .request .request_title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.message_content .request .request_action {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.message_content .request .denyBtn {
+  background: red;
 }

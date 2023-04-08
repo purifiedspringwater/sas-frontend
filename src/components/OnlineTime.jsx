@@ -9,7 +9,10 @@ export default function OnlineTime() {
     useEffect(() => {
         const interval = setInterval(() => {
             const now = new Date();
-            const dateString = `${now.getDate()}.${now.getMonth() + 1}.${now.getFullYear()}`;
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            const dateString = `${day}.${month}.${year}`;
             const dayString = now.toLocaleDateString('en-US', { weekday: 'long' });
             const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
             setOnlineTime(dateString);
