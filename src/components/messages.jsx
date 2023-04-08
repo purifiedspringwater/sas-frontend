@@ -115,7 +115,7 @@ export default function Messages() {
             )}
 
             {selectedMessage && (
-                <a className="returnBtn" onClick={handleBackClick}><BsArrowLeft />  Back to Messages</a>
+                <h2 className="returnBtn" onClick={handleBackClick}><BsArrowLeft />  Back to Messages</h2>
             )}
         </div>
     );
