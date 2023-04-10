@@ -10,25 +10,38 @@ import { FaUserCircle } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 
 
-export default function Navbar() {
+export default function Navbar({ role, name }) {
+
+  let menu;
+
+  if (role === 'student') {
+    menu = <div className="menu">
+      <NavLink end to={'/student'} ><AiFillHome />    MainPage</NavLink>
+      <NavLink to={'/student/statistics'} ><ImStatsDots />    Statistics</NavLink>
+      <NavLink to={'/student/messages'} ><MdMessage />    Messages</NavLink>
+      <NavLink to={'/student/reason'} ><HiClipboardList />    Absence Reason</NavLink>
+      <NavLink to={'/student/settings'} ><IoMdSettings />    Settings</NavLink>
+      <NavLink to={'/'} style={{ color: '#ff0000' }}><BiLogOut />    Log out</NavLink>
+    </div>;
+  } else if (role === 'admin') {
+    menu = <div className="menu">
+      <NavLink end to={'/admin'} ><ImStatsDots />    Statistics</NavLink>
+      <NavLink to={'/admin/reason'} ><HiClipboardList />    Absence Reason</NavLink>
+      <NavLink to={'/'} style={{ color: '#ff0000' }}><BiLogOut />    Log out</NavLink>
+    </div>;
+  }
+
   return (
     <div className="navbar">
       <img src={logo} alt="logo" style={{ width: 300 + 'px' }} />
-      <div className="profile admin">
+      <div className={`profile ${role}`}>
         <i><FaUserCircle /></i>
         <div className='title'>
-          <h3 className="name">Aslan Abenov</h3>
-          <p className="status">Student</p>
+          <h3 className="name">{name}</h3>
+          <p className="status">{role}</p>
         </div>
       </div>
-      <div className="menu">
-        <NavLink end to={'/main'} ><AiFillHome />    MainPage</NavLink>
-        <NavLink to={'/main/statistics'} ><ImStatsDots />    Statistics</NavLink>
-        <NavLink to={'/main/messages'} ><MdMessage />    Messages</NavLink>
-        <NavLink to={'/main/reason'} ><HiClipboardList />    Absence Reason</NavLink>
-        <NavLink to={'/main/settings'} ><IoMdSettings />    Settings</NavLink>
-        <NavLink to={'/'} style={{ color: '#ff0000' }}><BiLogOut />    Log out</NavLink>
-      </div>
+      {menu}
     </div>
 
   )

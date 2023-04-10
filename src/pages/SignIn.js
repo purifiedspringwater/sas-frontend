@@ -17,9 +17,14 @@ function SignIn() {
         },
         body: JSON.stringify({ ID, password }),
       });
-      if (response.ok) {
+      if (/*response.ok*/ !response.ok) {
         // authentication succeeded, redirect to dashboard or another page
-        window.location.href = '/main';
+        if (ID === '1') {
+          window.location.href = '/student';
+        }
+        else if (ID === '2') {
+          window.location.href = '/admin';
+        }
       } else {
         // authentication failed, display error message
         setError('Invalid ID or password');

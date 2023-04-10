@@ -18,19 +18,6 @@ export default function Settings() {
     setPermittedUsers(permittedUsers.filter(user => user.id !== userId));
   };
 
-  const getStatusLabel = (status) => {
-    switch (status) {
-      case 'active':
-        return <span style={{ color: 'green' }}>Active</span>;
-      case 'denied':
-        return <span style={{ color: 'red' }}>Denied</span>;
-      case 'requested':
-        return <span style={{ color: 'blue' }}>Requested</span>;
-      default:
-        return null;
-    }
-  };
-
   return (
     <div className='settings_container'>
       {showSettings ? (

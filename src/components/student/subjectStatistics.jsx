@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsFillXCircleFill, BsCheckCircleFill } from 'react-icons/bs'
-import PieChart from './pieChart'
+import PieChart from '../pieChart'
 
 export default function subjectStatistics({subjectData}) {
     console.log("RESING" + subjectData)

@@ -3,13 +3,45 @@ import SearchResult from './searchResult';
 import { BsSearch, BsArrowLeft } from 'react-icons/bs'
 
 const users = [
-  { id: 1, name: 'John', surname: 'Doe', status: 'student' },
-  { id: 1, name: 'John', surname: 'Doe', status: 'student' },
-  { id: 1, name: 'John', surname: 'Doe', status: 'student' },
-  { id: 1, name: 'John', surname: 'Doe', status: 'student' },
+  { id: 1, name: 'John', surname: 'Doe', status: 'studen' },
   { id: 2, name: 'Jane', surname: 'Doe', status: 'teacher' },
   { id: 3, name: 'Bob', surname: 'Smith', status: 'admin' },
   { id: 4, name: 'Alice', surname: 'Johnson', status: 'student' },
+];
+
+const subjects = [
+  {
+    name: 'Design Pattern', code: 'CSS 200', students: [
+      { id: 1, name: 'John', surname: 'Doe', present: 13, absent: 2 },
+      { id: 2, name: 'Jane', surname: 'Doe', present: 10, absent: 2 },
+      { id: 3, name: 'Bob', surname: 'Smith', present: 8, absent: 2 },
+      { id: 4, name: 'Alice', surname: 'Johnson', present: 6, absent: 2 },
+    ]
+  },
+  {
+    name: 'DBMS2', code: 'CSS 201', students: [
+      { id: 1, name: 'John', surname: 'Doe', present: 13, absent: 2 },
+      { id: 2, name: 'Jane', surname: 'Doe', present: 10, absent: 2 },
+      { id: 3, name: 'Bob', surname: 'Smith', present: 8, absent: 2 },
+      { id: 4, name: 'Alice', surname: 'Johnson', present: 6, absent: 2 },
+    ]
+  },
+  {
+    name: 'Programming', code: 'CSS 202', students: [
+      { id: 1, name: 'John', surname: 'Doe', present: 13, absent: 2 },
+      { id: 2, name: 'Jane', surname: 'Doe', present: 10, absent: 2 },
+      { id: 3, name: 'Bob', surname: 'Smith', present: 8, absent: 2 },
+      { id: 4, name: 'Alice', surname: 'Johnson', present: 6, absent: 2 },
+    ]
+  },
+  {
+    name: 'Histoty', code: 'CSS 203', students: [
+      { id: 1, name: 'John', surname: 'Doe', present: 13, absent: 2 },
+      { id: 2, name: 'Jane', surname: 'Doe', present: 10, absent: 2 },
+      { id: 3, name: 'Bob', surname: 'Smith', present: 8, absent: 2 },
+      { id: 4, name: 'Alice', surname: 'Johnson', present: 6, absent: 2 },
+    ]
+  },
 ];
 
 export default function Search({ onClose, handleUserRequest }) {
@@ -59,7 +91,7 @@ export default function Search({ onClose, handleUserRequest }) {
                 <SearchResult
                   key={user.id}
                   user={user}
-                  onRequest={() => {}}
+                  onRequest={() => { }}
                   onAddToPermitted={handleAddToPermitted}
                 />
               ))}
