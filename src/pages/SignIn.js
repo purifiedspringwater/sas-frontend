@@ -1,14 +1,33 @@
-import React from 'react';
+import React , {useState} from 'react';
 import logo from '../assets/logo.svg';
 import '../styles/SignIn.css';
-import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
-  const navigate = useNavigate();
+  const [ID, setID] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate('/main');
+    try {
+      const response = await fetch('/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ID, password }),
+      });
+      if (response.ok) {
+        // authentication succeeded, redirect to dashboard or another page
+        window.location.href = '/main';
+      } else {
+        // authentication failed, display error message
+        setError('Invalid ID or password');
+      }
+    } catch (error) {
+      console.error('Error during login', error);
+      setError('An unexpected error occurred');
+    }
   };
 
   return (
@@ -16,8 +35,9 @@ function SignIn() {
       <div className="container">
         <img src={logo} alt="Logo" />
         <form onSubmit={handleSubmit}>
-          <input type="number" placeholder='ID' />
-          <input type="password" placeholder='PASSWORD' />
+          {error && <div style={{ color: 'red' }}>{error}</div>}
+          <input type="text" placeholder='ID' value={ID} onChange={(e) => setID(e.target.value)} />
+          <input type="password" placeholder='PASSWORD' value={password} onChange={(e) => setPassword(e.target.value)} />
           <button type="submit" >LOG IN</button>
         </form>
       </div>

@@ -2,17 +2,16 @@ import React from 'react'
 import { BsFillXCircleFill, BsCheckCircleFill } from 'react-icons/bs'
 import PieChart from './pieChart'
 
-export default function subjectStatistics() {
-
-    const attendanceData = [25, 10, 5];
-
+export default function subjectStatistics({subjectData}) {
+    console.log("RESING" + subjectData)
+    
     return (
         <div className='subjectStat'>
             <h2>Design Pattern</h2>
-            <div className="lecture">
-                <h4>01N - Lyazzat Atymtayeva, Doctor of Science</h4>
-                <table>
-                    <col span={-1}></col>
+            {subjectData.map((subject, index) => (
+                <div key={index} className='lecture'>
+                    <h4>{subject.lecture}</h4>
+                    <table>
                     <thead>
                         <tr>
                             <th>Date</th>
@@ -20,79 +19,23 @@ export default function subjectStatistics() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'red' }}><BsFillXCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'red' }}><BsFillXCircleFill /></i></td>
-                        </tr>
+                        {subjectData[index].attendance.map((attendance) => (
+                            <tr key={attendance.date}>
+                                <td>{attendance.date}</td>
+                                <td>
+                                    <i style={{ color: attendance.attendance ? 'green' : 'red' }}>
+                                        {attendance.attendance ? <BsCheckCircleFill /> : <BsFillXCircleFill />}
+                                    </i>
+                                </td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <div className="pieChart">
-                    <PieChart data={attendanceData} />
+                    <PieChart data={subjectData[index].attendanceRatio} />
                 </div>
-
-            </div>
-            <div className="practice">
-                <h4>03P - Lyazzat Atymtayeva, Doctor of Science</h4>
-                <table>
-                    <col span={-1}></col>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Attendance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'green' }}><BsCheckCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'red' }}><BsFillXCircleFill /></i></td>
-                        </tr>
-                        <tr>
-                            <td>12.02.2023 09:00</td>
-                            <td><i style={{ color: 'red' }}><BsFillXCircleFill /></i></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div className="pieChart">
-                    <PieChart data={attendanceData} />
                 </div>
-            </div>
-
+            ))}
         </div>
     )
 }
