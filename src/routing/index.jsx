@@ -4,15 +4,14 @@ import { useState, createContext, useEffect } from "react";
 import { observer } from "mobx-react-lite";
 import Store from "../store.js";
 
-import Main from '../pages/Main.js'
-import Login from '../pages/SignIn.js'
-import Absence from '../components/student/absence'
-import Statistics from '../components/student/statistics'
+import App from "../App.js";
+import Main from "../pages/Main";
+import Login from "../pages/SignIn";
+import Absence from "../components/student/absence";
+import Statistics from "../components/student/statistics";
 import Specialreason from "../components/student/specialreason";
-import Messages from '../components/student/messages'
-import Settings from '../components/student/settings'
-import AdminStatistics from '../components/admin/adminStatistics'
-import AdminReason from '../components/admin/SpecialReason'
+import Messages from "../components/student/messages";
+import Settings from "../components/student/settings";
 export const UserContext = createContext();
 
 const store = new Store();
