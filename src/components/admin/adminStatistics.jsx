@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BsSearch } from 'react-icons/bs'
 
 const users = [
   { id: 1, name: 'John', surname: 'Doe', degree: 'Bachelor' },
@@ -8,12 +9,12 @@ const users = [
 ];
 
 
-export default function AdminStatistics (){
+export default function AdminStatistics() {
   const [individualSearchTerm, setIndividualSearchTerm] = useState('');
   const [courseSearchTerm, setCourseSearchTerm] = useState('');
   const [searchType, setSearchType] = useState('individual');
   const [absenceRate, setAbsenceRate] = useState('');
-  const [matchingUser, setMatchingUser] = useState(null);
+  const [matchingUser, setMatchingUser] = useState(true);
 
   const handleIndividualSearchTermChange = (event) => {
     setIndividualSearchTerm(event.target.value);
@@ -49,25 +50,25 @@ export default function AdminStatistics (){
 
 
   return (
-    <div>
-      <div>
-        <button type="button" onClick={() => handleSearchTypeChange('individual')} className={searchType === 'individual' ? 'active' : ''}>Individual</button>
-        <button type="button" onClick={() => handleSearchTypeChange('course')} className={searchType === 'course' ? 'active' : ''}>Course</button>
+    <div className='admin_statistics'>
+      <h2>Statistics</h2>
+      <div className='search_type'>
+        <a type="button" onClick={() => handleSearchTypeChange('individual')} className={searchType === 'individual' ? 'individual active' : 'individual'}>Individual</a>
+        <a type="button" onClick={() => handleSearchTypeChange('course')} className={searchType === 'course' ? 'course active' : 'course'}>Course</a>
       </div>
-      {searchType === 'individual' ? (
-        <div className='individual'>
-          <input type="text" value={individualSearchTerm} onChange={handleIndividualSearchTermChange} />
-        </div>
-      ) : (
-        <div className='course'> 
-          <input type="text" value={courseSearchTerm} onChange={handleCourseSearchTermChange} />
-          <label>
-            Absence Rate Filter:
-            <input type="number" value={absenceRate} onChange={handleAbsenceRateChange} />
-          </label>
-        </div>
-      )}
-      <div>
+      <div className="filter">
+        {searchType === 'individual' ? (
+          <>
+            <BsSearch />
+            <input type="text" value={individualSearchTerm} onChange={handleIndividualSearchTermChange} />
+          </>
+        ) : (
+          <><input type="text" value={courseSearchTerm} onChange={handleCourseSearchTermChange} />
+            <label>
+              Absence Rate Filter:
+              <input type="number" value={absenceRate} onChange={handleAbsenceRateChange} />
+            </label></>
+        )}
         <button onClick={handleSearch}>Search</button>
       </div>
       {matchingUser && (

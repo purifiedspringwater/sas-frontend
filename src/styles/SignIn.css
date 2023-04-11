@@ -42,11 +42,10 @@ img {
   min-height: 30px;
   background: #ffffff;
   border-radius: 20px;
+  padding: 0px 20px;
+  text-align: center;
 }
 
-.signIn form input:focus {
-  padding: 0px 20px;
-}
 
 .signIn form button {
   padding: 5px 20px;

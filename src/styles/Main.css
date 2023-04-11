@@ -46,7 +46,7 @@ button:disabled {
 }
 
 .Main > div:nth-child(2) {
-  margin-top: 100px;
+  margin-top: 180px;
   width: 65%;
 }
 
@@ -162,16 +162,12 @@ button:disabled {
   margin: auto 0;
 }
 
-
-
-
 /* <-----------******----------> */
 /*              Main             */
 
 .main {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
 }
 
 .main h2 {
@@ -553,4 +549,47 @@ option {
 .search_results {
   display: flex;
   flex-direction: column;
+}
+
+/* <-----------******----------> */
+/*        Admin Statistics       */
+
+.admin_statistics h2 {
+  color: #50abff;
+}
+
+.admin_statistics .search_type {
+  border-bottom: 1.5px solid #50abff;
+  margin: 10px 0px;
+  padding-bottom: 2px;
+}
+
+.admin_statistics .search_type a {
+  background: #e0e0e0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin-left: 15px;
+}
+
+.admin_statistics .search_type a.active {
+  background: #b4d9f1;
+}
+
+.admin_statistics .filter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: fit-content;
+}
+
+.admin_statistics .filter button {
+  background: #d9d9d9;
+  border-radius: 30px;
+  padding: 3px 11px;
+  color: black;
+}
+
+
+.admin_statistics table {
+  width: 60%;
 }

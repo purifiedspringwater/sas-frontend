@@ -1,37 +1,29 @@
-import React , {useState} from 'react';
+import React, { useState, useContext } from 'react';
 import logo from '../assets/logo.svg';
 import '../styles/SignIn.css';
+import { useNavigate, useLocation } from "react-router-dom";
+import { UserContext } from "../routing/index.jsx";
 
 function SignIn() {
-  const [ID, setID] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location.state?.from?.pathname || "/";
+  const [ID, setID] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { store } = useContext(UserContext);
 
-  const handleSubmit = async (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch('/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ID, password }),
-      });
-      if (/*response.ok*/ !response.ok) {
-        // authentication succeeded, redirect to dashboard or another page
-        if (ID === '1') {
-          window.location.href = '/student';
-        }
-        else if (ID === '2') {
-          window.location.href = '/admin';
-        }
-      } else {
-        // authentication failed, display error message
-        setError('Invalid ID or password');
-      }
-    } catch (error) {
-      console.error('Error during login', error);
-      setError('An unexpected error occurred');
+    console.log("hello");
+    const response = await store.login(ID, password);
+    console.log(response);
+
+    if (response.status === 200) {
+      console.log(response.status);
+      navigate(fromPage);
+    } else {
+      setError("Invalid id or password!");
     }
   };
 
@@ -39,7 +31,7 @@ function SignIn() {
     <div className="signIn">
       <div className="container">
         <img src={logo} alt="Logo" />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleLogin}>
           {error && <div style={{ color: 'red' }}>{error}</div>}
           <input type="text" placeholder='ID' value={ID} onChange={(e) => setID(e.target.value)} />
           <input type="password" placeholder='PASSWORD' value={password} onChange={(e) => setPassword(e.target.value)} />
