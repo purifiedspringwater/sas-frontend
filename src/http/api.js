@@ -28,12 +28,11 @@ $api.interceptors.response.use(
     ) {
       originalRequest._isRetry = true;
       try {
-        const response =
-          (await axios.get) <
-          AuthResponse >
-          (`${API_URL}/refresh`, { withCredentials: true });
-        localStorage.setItem("token", response.data.accessToken);
-        return $api.request(originalRequest);
+        // const response =
+        //   (await axios.get) <AuthResponse>
+        //   (`${API_URL}/refresh`, { withCredentials: true });
+        // localStorage.setItem("token", response.data.accessToken);
+        // return $api.request(originalRequest);
       } catch (e) {
         console.log("НЕ АВТОРИЗОВАН");
       }
