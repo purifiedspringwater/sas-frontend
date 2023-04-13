@@ -264,7 +264,7 @@ button:disabled {
 /* <-----------******----------> */
 /*        Subject Statistics     */
 
-.statistics .subjectStat table col {
+/* .statistics .subjectStat table col {
   border-right: 2px solid #d9d9d9;
 }
 
@@ -284,7 +284,12 @@ button:disabled {
 
 .statistics .subjectStat .pieChart > div {
   width: 100%;
+} */
+.verticalHeader {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
 }
+
 
 /* <-----------******----------> */
 /*         Special Reason        */
