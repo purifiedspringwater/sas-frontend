@@ -3,7 +3,7 @@ import axios from "axios";
 import { store } from "../store";
 // import { IUser } from "../models/IUser";
 
-export const API_URL = `http://localhost:5000/api`;
+export const API_URL = `http://161.35.29.255:7000/api`;
 
 const $api = axios.create({
   withCredentials: true,
