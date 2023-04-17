@@ -3,7 +3,7 @@ import { useState, createContext, useEffect } from "react";
 
 import { observer } from "mobx-react-lite";
 import Store from "../store.js";
-
+import RequireAuth from "../hook/index.jsx"
 import App from "../App.js";
 import Main from "../pages/Main";
 import Login from "../pages/SignIn";
@@ -32,15 +32,15 @@ export const MyRoutes = observer(() => {
   return (
     <UserContext.Provider value={{ store }}>
       <BrowserRouter>
-        <Routes>
+        <Routes>                    
           <Route path="/" element={<Login />} />
-          <Route path="/main/:role" element={<Main />}>
-            <Route index element={<Absence />} />
+            <Route path="/student" element={<Main/>}>
+            <Route index element={<Absence/>} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="reason" element={<Specialreason />} />
             <Route path="settings" element={<Settings />} />
             <Route path="messages" element={<Messages />} />
-          </Route>
+          </Route>          
         </Routes>
       </BrowserRouter>
     </UserContext.Provider>

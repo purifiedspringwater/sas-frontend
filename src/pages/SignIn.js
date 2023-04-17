@@ -7,11 +7,12 @@ import { UserContext } from "../routing/index.jsx";
 function SignIn() {
   const navigate = useNavigate();
   const location = useLocation();
-  const fromPage = location.state?.from?.pathname || "/main/student";
+  const { store } = useContext(UserContext);
+  const fromPage = location.state?.from?.pathname || `/${store.role}`;
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { store } = useContext(UserContext);
+  
 
   const handleLogin = async (event) => {
     event.preventDefault();
