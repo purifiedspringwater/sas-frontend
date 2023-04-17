@@ -1,51 +1,56 @@
-import React from 'react'
+import React, { useState } from 'react';
+import WeeklySchedule from '../student/weeklySchedule';
 
-export default function main() {
+const subjects = [
+  { name: 'History', absence: '13%', group: '05-N', room: '312F', status: 'accepted' },
+  { name: 'Math', absence: '5%', group: '02-M', room: '125B', status: 'active' },
+  { name: 'Science', absence: '10%', group: '01-N', room: '301C', status: 'notActive' },
+  { name: 'English', absence: '8%', group: '03-M', room: '210A', status: 'notActive' },
+];
+
+export default function Absence() {
+  const [showSchedule, setShowSchedule] = useState(false);
+
+  const toggleSchedule = () => {
+    setShowSchedule(true);
+  };
+
   return (
     <div className="main">
-
-      <h2>Main Page</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>SUBJECT</th>
-            <th>ABSENCE</th>
-            <th>GROUP</th>
-            <th>ROOM</th>
-            <th>STATUS</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className='accepted'>
-            <td>History</td>
-            <td>13%</td>
-            <td>05-N</td>
-            <td>312F</td>
-            <td><a href="">Accepted</a></td>
-          </tr>
-          <tr className='active'>
-            <td>History</td>
-            <td>13%</td>
-            <td>05-N</td>
-            <td>312F</td>
-            <td><a href="">Registrade</a></td>
-          </tr>
-          <tr className='notActive'>
-            <td>History</td>
-            <td>13%</td>
-            <td>05-N</td>
-            <td>312F</td>
-            <td><a href="">Not Active</a></td>
-          </tr>
-          <tr className='notActive'>
-            <td>RedHat - System Administration (OpenCode) </td>
-            <td>13%</td>
-            <td>05-N</td>
-            <td>312F</td>
-            <td><a href="">Not Active</a></td>
-          </tr>
-        </tbody>
-      </table>
+      <h2>Dashboard</h2>
+      {!showSchedule && (
+        <>
+          <table>
+            <thead>
+              <tr>
+                <th>SUBJECT</th>
+                <th>ABSENCE</th>
+                <th>GROUP</th>
+                <th>ROOM</th>
+                <th>STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {subjects.map(subject => (
+                <tr key={subject.name} className={subject.status}>
+                  <td>{subject.name}</td>
+                  <td>{subject.absence}</td>
+                  <td>{subject.group}</td>
+                  <td>{subject.room}</td>
+                  <td><a href="">{subject.status === 'active' ? 'registrate' : subject.status}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button onClick={toggleSchedule}>Show Week Schedule</button>
+        </>
+      )}
+      {showSchedule && (
+        <div>
+          <button onClick={() => setShowSchedule(false)}>Back to Subjects</button>
+          <WeeklySchedule />
+        </div>
+      )}
     </div>
-  )
+  );
 }

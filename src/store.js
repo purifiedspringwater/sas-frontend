@@ -1,4 +1,5 @@
 import { makeAutoObservable } from "mobx";
+import { useState } from "react";
 import AutService from "./services/AuthService";
 import axios from "axios";
 import UserService from "./services/UserService";
@@ -7,6 +8,7 @@ export default class Store {
   isAuth = false;
   isLoading = false;
   checked = false;
+  role = 'student'
   constructor() {
     makeAutoObservable(this);
   }
@@ -26,7 +28,7 @@ export default class Store {
     try {
       console.log("we are inside of login");
       const response = await AutService.login(userId, password);
-      console.log(response);
+      console.log("WE " + response);
       localStorage.setItem("token", response.data.accessToken);
       this.setAuth(true);
       this.setUser(response.data.user);

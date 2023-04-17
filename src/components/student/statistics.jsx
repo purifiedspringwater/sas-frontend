@@ -22,8 +22,7 @@ const SsubjectData = [
             { date: "12.02.2023 09:00", attendance: true },
             { date: "12.02.2023 09:00", attendance: false },
             { date: "12.02.2023 09:00", attendance: false },
-        ],
-        attendanceRatio: [25, 10, 5],
+        ]
     },
     {
         subject: 'Design Pattern',
@@ -35,8 +34,7 @@ const SsubjectData = [
             { date: "12.02.2023 09:00", attendance: true },
             { date: "12.02.2023 09:00", attendance: false },
             { date: "12.02.2023 09:00", attendance: false },
-        ],
-        attendanceRatio: [60, 20, 20],
+        ]
     },
 ]
 
