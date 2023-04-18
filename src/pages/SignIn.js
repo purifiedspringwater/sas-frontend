@@ -8,6 +8,7 @@ import ForgetPassword from "../components/ForgetPassword";
 function SignIn() {
   const navigate = useNavigate();
   const location = useLocation();
+
   const fromPage = location.state?.from?.pathname || "/student";
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
